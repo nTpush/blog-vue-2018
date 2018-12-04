@@ -1,0 +1,95 @@
+.my-info {
+  width: 400px;
+  background: #FAFAFA;
+  top: 0;
+  left: 0px;
+  position: fixed;
+  text-align: center;
+  padding-top: 100px;
+  opacity: 0;
+  animation: opacity 1s forwards;
+  animation-delay: 2s;
+  z-index: -1;
+  padding-bottom: 86px;
+  // 基本信息
+  &-base {
+    .portrait {
+      img {
+        width: 100px;
+        border-radius: 50%;
+      }
+    }
+    .name {
+      font-size: 18px;
+    }
+    .title {
+      font-size: 14px !important;
+    }
+  }
+  // 统计信息
+  &-statistical {
+    width: 200px;
+    margin: 0 auto;
+    &>ul {
+      display: flex;
+      justify-content: space-around;
+      p, h2 {
+        line-height: 20px;
+        margin-left: -25px;
+      }
+      h2 {
+        font-size: 16px;
+      }
+    }
+  }
+  // 分割线
+  &-cut-line {
+    width: 80%;
+    margin: 0 auto;
+    border-top: 1px dashed #ccc;
+    height: 2px;
+  }
+  // 联系我的方式
+  &-contact-me {
+    width: 300px;
+    height: 100px;
+    margin: 10px auto;
+    padding: 0 !important;
+    ul {
+      padding: 0;
+      li {
+        width: 150px;
+        display: block;
+        height: 50px;
+        line-height: 50px;
+        float: left;
+        font-size: 14px;
+        vertical-align: middle;
+        &:hover {
+          background: #222;
+          color: #fff;
+        }
+        .icon {
+          vertical-align: middle;
+          font-size: 19px;
+          margin-top: -7px;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+  // 版权信息
+  &-copyright-information {
+    color: #ccc;
+    margin-top: 20px;
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

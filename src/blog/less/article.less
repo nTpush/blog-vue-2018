@@ -1,0 +1,186 @@
+// 按钮公共样式
+.button_public(@po:absolute, @tr: translateY(-50%)) {
+  position: @po;
+  transform: @tr;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 50px;
+}
+.article-detail {
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  background: rgba(0,0,0,.9);
+  opacity: 0;
+  border-top: 2px solid #FAA2AB;
+  animation: opacity 1s forwards;
+  z-index: 99;
+  // 功能按钮
+  &-buttons {
+    button {
+      color: #646C5A;
+      transition: 1s all;
+      &:hover {
+        color: #ccc;
+      }
+    }
+    //上一篇
+    .left {
+      .button_public();
+      left: 10%;
+    }
+    //下一篇
+    .right {
+      .button_public();
+      right: 10%;
+     }
+
+   }
+  // 文章内容
+  &-content {
+    width: 100%;
+    height: 100vh;
+    background: #f5f5f5;
+    margin: 0 auto;
+    position: relative;
+    border-top-right-radius: 5px;
+    .close {
+      width: 50px;
+      height: 50px;
+      background: #fff;
+      position: absolute;
+      top:10px;
+      right: 2px;
+      font-size: 14px;
+      line-height: 30px;
+      text-align: center;
+      color: rgba(0, 0, 0, .6);
+      box-shadow: 0 3px 1px -4px rgba(0, 0, 0, 1), 0 2px 2px 0 rgba(0, 0, 0, .09), 0 1px 5px 0 rgba(0, 0, 0, .04);
+      border-right: 2px solid #7CAD46;
+      border-radius: 50%;
+      z-index: 9999;
+    }
+    // 基本信息
+    .base-info {
+      width: 100%;
+      background: #fff;
+      position: absolute;
+      padding: 10px;
+      z-index: 999;
+      // 标题
+      .title {
+        font-size: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      // 标签和日期
+      .mate-and-date {
+        display: flex;
+        .mate {
+          display: flex;
+          margin-top: 5px;
+        }
+        .date {
+          font-size: 12px;
+          margin-top: 8px;
+          text-indent: 10px;
+        }
+      }
+    }
+    // 主要内容
+    .main-info {
+      width: 100%;
+      height: calc(100vh - 100px);
+      overflow: auto;
+      position: absolute;
+      opacity: 0;
+      animation: topToDown 1s forwards;
+      // 评论
+      .commit {
+        height: 40px;
+        line-height: 40px;
+        background: #6F6F6F;
+        padding: 0 20px;
+        color: #fff;
+      }
+    }
+  }
+}
+//.article-main-box-list {
+//  height: auto !important;
+//}
+
+.article-detail-content .main-info::-webkit-scrollbar {/*滚动条整体样式*/
+  width: 10px;     /*高宽分别对应横竖滚动条的尺寸*/
+  height: 2px;
+}
+.article-detail-content .main-info::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+  background: #ccc;
+}
+.article-detail-content .main-info::-webkit-scrollbar-track {/*滚动条里面轨道*/
+  background: #f5f5f5;
+}
+
+
+@keyframes topToDown {
+  0% {
+    bottom: 800px;
+    opacity: 0;
+  }
+  100% {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media(min-width:768px){
+  .article-detail-content {
+    width: 700px;
+  }
+  .article-detail {
+    // 文章内容
+    &-content {
+      .close {
+        right: -25px;
+      }
+    }
+  }
+}
+@media(min-width:992px){
+  .article-detail-content {
+    width: 900px;
+  }
+}
+@media(min-width:1200px){
+  .article-detail-content {
+    width: 1000px;
+  }
+}
+
+.demo-spin-icon-load{
+  animation: ani-demo-spin 1s linear infinite;
+}
+@keyframes ani-demo-spin {
+  from { transform: rotate(0deg);}
+  50%  { transform: rotate(180deg);}
+  to   { transform: rotate(360deg);}
+}
+.demo-spin-col{
+  height: 100px;
+  position: relative;
+  border: 1px solid #eee;
+}

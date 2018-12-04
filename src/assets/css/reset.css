@@ -1,0 +1,54 @@
+@font-face {
+  font-family: Test;
+  /*小米兰亭*/
+  src: url('../font/diy.ttf');
+}
+.article-introduction ul {
+  font-family: Test;
+}
+
+.v-dialog__content {
+  z-index: 999999999 !important;
+}
+.ivu-modal-fullscreen .ivu-modal-footer {
+  display: none;
+}
+.v-note-wrapper {
+  height: 500px;
+}
+.ivu-message, .ivu-notice {
+  z-index: 99999999999999;
+}
+
+code {
+  font-size: 16px;
+  font-family: "黑体";
+  line-height: 25px;
+}
+code:after, code:before, kbd:after, kbd:before {
+  display: none;
+}
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+button {
+  outline: none;
+}
+@media(min-width:768px){
+
+  .md pre:after {
+    display: block;
+  }
+}
+@media(min-width:992px){
+
+}
+@media(min-width:1200px){
+
+}

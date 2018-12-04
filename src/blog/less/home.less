@@ -1,0 +1,353 @@
+.article-main-box {
+  // 网页主体
+  &-list {
+    width: 100%;
+    // overflow: hidden;
+    background: #F2F2F2;
+    padding-bottom: 90px;
+    //height: 600px;
+    // 功能菜单
+    .row-button-box {
+      height: 100px;
+      padding: 0 30px;
+      font-size: 24px;
+      font-weight: bolder;
+      color: #fff;
+      position: relative;
+      .show-me button {
+        width: 100px;
+        height: 25px;
+        position: fixed;
+        top: 30px;
+        left: 50px;
+        line-height: 25px;
+        border-radius: 30px;
+        background: #DCE0E6;
+        color: #5C5C5C;
+        font-size: 14px;
+        font-weight: normal;
+        transition: all 1s;
+        &:hover {
+          width: 160px !important;
+          height: 30px !important;
+          background: linear-gradient(to right,#A7FF6F,#53FFB9);
+          font-size: 1.5rem !important;
+          line-height: 30px !important;
+          animation: rotating 3s linear infinite;
+        }
+      }
+    }
+    // 文章简介列表
+    .article-introduction {
+      width: 98%;
+      height: calc(100vh - 100px);
+      // overflow: auto;
+      padding-bottom: 80px;
+      position: relative;
+      // overflow-x: hidden;
+      ul {
+        display: block;
+        border-right: 10px solid #F2F2F2;
+        background: #F2F2F2;
+        //min-width: 100% !important;
+        li {
+            width: 100%;
+            height: auto;
+            border-top-right-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            background: #ffff;
+            margin-right: 50px;
+            position: relative;
+            box-shadow: 0 3px 1px -2px rgba(0,0,0,.1),0 2px 2px 0 rgba(0,0,0,.04),0 1px 5px 0 rgba(0,0,0,.02);
+            transition: all 1s;
+          div {
+            width: 100%;
+            height: 50px;
+            background: #333;
+            position: absolute;
+            bottom: 0;
+            left: 0px;
+            text-align: left;
+            padding-left: 10px;
+            line-height: 50px;
+            font-size: 17px;
+            color: #fff;
+            overflow: hidden;
+          }
+          // 缩略图
+          .thumbnail {
+            overflow: hidden;
+            width: 100%;
+            //height: 300px;
+            position: relative;
+            opacity: 0;
+            animation: opacityImg 1s forwards;
+          }
+          // 日期
+          .created_at {
+            display: none;
+            top: -85px;
+            text-align: right;
+            border: none;
+            background: transparent;
+            color: #222;
+            font-size: 14px !important;
+            padding-top: 12px;
+          }
+          // 标题
+          .title {
+            top: -40px;
+            background: #fff;
+            color: #222;
+            border-bottom: 1px dashed #525252;
+            border-top: 0;
+            height: 40px;
+            font-size: 14px !important;
+            padding-top: 12px;
+            white-space:nowrap;
+          }
+          // 简介
+          .introduction {
+            width: 90%;
+            display: inline-block;
+            line-height: 30px;
+            font-size: 14px ;
+            text-indent: 20px;
+            padding: 10px;
+          }
+          .type {
+            width: 50px;
+            height: 50px;
+            display: none;
+            background: #F2F2F2;
+            position: absolute;
+            border-radius: 50%;
+            right: -25px;
+            text-align: center;
+            top: 20px;
+            box-shadow:0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+            img {
+              width: 90%;
+              vertical-align: middle;
+            }
+          }
+          &:hover {
+            box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.4), 0px 4px 5px 0px rgba(0,0,0,0.34), 0px 1px 10px 0px rgba(0,0,0,0.12);
+          }
+          &:last-child {
+            width: auto;
+            text-align: right;
+            background: none;
+            box-shadow: none;
+            margin-bottom: 0px;
+            &:hover {
+              box-shadow: none;
+              transform: translateY(0px);
+            }
+          }
+        }
+      }
+    }
+  }
+  // 网页装饰物
+  &-ornament {
+    position: relative;
+    .one {
+      display: none;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #E85B6C;
+      position: absolute;
+      top: -40px;
+      left: 15%;
+      text-align: center;
+      color: #fff;
+      font-size: 60px;
+      box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.1), 0px 4px 5px 0px rgba(0,0,0,0.10), 0px 1px 10px 0px rgba(0,0,0,0.10);
+    }
+    .two {
+      display: none;
+      width:0;
+      height:0;
+      border-width:0 40px 40px;
+      border-style:solid;
+      border-color:transparent transparent #000000;/*透明 透明  灰*/
+      position: absolute;
+      right: 30%;
+      top: -40px;
+      color: #fff;
+      span {
+        position: absolute;
+        left:-12px;
+        top: 18px;
+        font-weight: bold;
+      }
+      &:after {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 20px;
+        background: #E9596B;
+        position: absolute;
+        transform: rotate(135deg);
+        top: -11px;
+        left: -26px;
+      }
+      &:before {
+        content: "";
+        display: block;
+        width: 15px;
+        height: 15px;
+        background: #FAA3AC;
+        position: absolute;
+        transform: rotate(45deg);
+        top: -9px;
+        left: 5px;
+      }
+    }
+  }
+  // 网站说明信息
+  &-description {
+    position: fixed;
+    left: 50%;
+    transform:translateX(-50%);
+    bottom: 0px;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 5px;
+    background: #222;
+    height: 40px;
+    line-height: 40px;
+    .circle {
+      width: 20px;
+      height: 20px;
+      background: #fff;
+      position: fixed;
+      border-radius: 50%;
+      left: 50%;
+      transform:translateX(-50%);
+      border: 5px solid #222;
+      bottom: 28px;
+    }
+    // 联系我
+    .contact-me {
+      height: 30px;
+      position: absolute;
+      top: -25px;
+      left: 10px;
+      ul {
+        display: flex;
+        padding: 0;
+        li {
+          display: block;
+          width: 15px;
+          height: 15px;
+          background: #c0ccda;
+          margin: 4px;
+        }
+      }
+    }
+  }
+}
+.show-me button.animation-stop {
+  animation: null;
+  width: 80px;
+}
+.show-me button.animation-start {
+  animation: rotating 2s infinite;
+}
+.articles-li-img {
+  height: auto;
+  position: relative;
+}
+.articles-li-font {
+  height: auto;
+  padding-bottom: 60px;
+  max-height: 350px;
+}
+.article-introduction::-webkit-scrollbar {/*滚动条整体样式*/
+  width: 10px;     /*高宽分别对应横竖滚动条的尺寸*/
+  height: 2px;
+}
+.article-introduction::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+  background: #ccc;
+}
+.article-introduction::-webkit-scrollbar-track {/*滚动条里面轨道*/
+  background: #F2F2F2;
+}
+@keyframes opacityImg {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes rotating{
+  0% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(-5deg);
+  }
+}
+@media(min-width:768px){
+  .article-main-box {
+    &-list {
+      height: 600px !important;
+      .article-introduction {
+        height: auto;
+        overflow-x: auto;
+        width: 100%;
+        ul {
+          margin-top: 0px;
+          display: flex;
+          align-items: flex-end;
+          width: auto;
+          min-height: 300px;
+          li {
+            width: 500px;
+            margin-bottom: 0;
+            overflow: visible;
+            .type {
+              display: block;
+            }
+            .created_at {
+              display: block;
+            }
+            .thumbnail {
+              height: 300px;
+            }
+          }
+        }
+      }
+    }
+    &-ornament {
+      .one {
+        display: block;
+      }
+      .two {
+        display: block;
+      }
+    }
+  }
+  .article-introduction::-webkit-scrollbar {/*滚动条整体样式*/
+    width: 10px;     /*高宽分别对应横竖滚动条的尺寸*/
+    height: 2px;
+  }
+  .article-introduction::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+    /*background: linear-gradient(to right,#63942E,#93CD56);*/
+    background: #222;
+  }
+  .article-introduction::-webkit-scrollbar-track {/*滚动条里面轨道*/
+    background: #F2F2F2;
+  }
+}
+@media(min-width:992px){}
+@media(min-width:1200px){}

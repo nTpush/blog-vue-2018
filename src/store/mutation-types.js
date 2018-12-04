@@ -1,0 +1,3 @@
+
+export const SETUSERINFO = 'SETUSERINFO'
+export const CLASSORMATE = 'CLASSORMATE'
